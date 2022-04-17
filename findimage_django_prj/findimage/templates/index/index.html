@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Mazer Admin Dashboard</title>
-    
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'index/assets/css/bootstrap.css' %}">
-    
+
 <link rel="stylesheet" href="{% static 'index/assets/vendors/iconly/bold.css' %}">
 
     <link rel="stylesheet" href="{% static 'index/assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
@@ -34,8 +34,20 @@
     </div>
     <div class="sidebar-menu">
         <ul class="menu">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-1">
+                        <div class="input-group mb-6">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                aria-label="Search" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="button-addon2"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <li class="sidebar-title">Menu</li>
-            
+
             <li
                 class="sidebar-item active ">
                 <a href="http://localhost:8000/findimage/index" class='sidebar-link'>
@@ -43,168 +55,73 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            
+
             <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-stack"></i>
-                    <span>Components</span>
+                    <span>기능 명세표</span>
                 </a>
                 <ul class="submenu ">
                     <li class="submenu-item ">
-                        <a href="component-alert.html">Alert</a>
+                        <a href="component-alert.html">딥러닝 기반 이미지 검색</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="component-badge.html">Badge</a>
+                        <a href="component-badge.html">시계열 트렌드 분석</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="component-breadcrumb.html">Breadcrumb</a>
+                        <a href="component-breadcrumb.html">뉴스레터 서비스</a>
                     </li>
                 </ul>
             </li>
-            
+
             <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-collection-fill"></i>
-                    <span>Extra Components</span>
+                    <span>사용한 기술목록</span>
                 </a>
                 <ul class="submenu ">
                     <li class="submenu-item ">
-                        <a href="extra-component-avatar.html">Avatar</a>
+                        <a href="extra-component-avatar.html">Selenium</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="extra-component-sweetalert.html">Sweet Alert</a>
+                        <a href="extra-component-sweetalert.html">Yolo</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="extra-component-toastify.html">Toastify</a>
+                        <a href="extra-component-toastify.html">Django</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="extra-component-rating.html">Rating</a>
+                        <a href="extra-component-rating.html">Airflow</a>
+                    </li>
+                    <li class="submenu-item ">
+                        <a href="extra-component-rating.html">Slack</a>
                     </li>
                 </ul>
             </li>
-            
-            <li class="sidebar-title">Forms &amp; Tables</li>
-            
+
+            <li class="sidebar-title">우리에 대하여 위하여</li>
+
             <li
                 class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-hexagon-fill"></i>
-                    <span>Form Elements</span>
-                </a>
-                <ul class="submenu ">
+
+            <a href="#" class='sidebar-link'>
+                    <i class="bi bi-collection-fill"></i>
+                    <span>Github</span>
+            </a>
+            <ul class="submenu ">
                     <li class="submenu-item ">
-                        <a href="form-element-input.html">Input</a>
+                        <a href="extra-component-avatar.html">크롤러</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="form-element-input-group.html">Input Group</a>
+                        <a href="extra-component-sweetalert.html">딥러닝</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="form-element-select.html">Select</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="form-element-radio.html">Radio</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="form-element-checkbox.html">Checkbox</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="form-element-textarea.html">Textarea</a>
+                        <a href="extra-component-toastify.html">웹 프로덕트</a>
                     </li>
                 </ul>
             </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="form-layout.html" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-medical-fill"></i>
-                    <span>Form Layout</span>
-                </a>
-            </li>
-            
-            <li class="sidebar-title">Pages</li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-email.html" class='sidebar-link'>
-                    <i class="bi bi-envelope-fill"></i>
-                    <span>Email Application</span>
-                </a>
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-chat.html" class='sidebar-link'>
-                    <i class="bi bi-chat-dots-fill"></i>
-                    <span>Chat Application</span>
-                </a>
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-gallery.html" class='sidebar-link'>
-                    <i class="bi bi-image-fill"></i>
-                    <span>Photo Gallery</span>
-                </a>
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-checkout.html" class='sidebar-link'>
-                    <i class="bi bi-basket-fill"></i>
-                    <span>Checkout Page</span>
-                </a>
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-person-badge-fill"></i>
-                    <span>Authentication</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="auth-login.html">Login</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="auth-register.html">Register</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="auth-forgot-password.html">Forgot Password</a>
-                    </li>
-                </ul>
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-x-octagon-fill"></i>
-                    <span>Errors</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="error-403.html">403</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="error-404.html">404</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="error-500.html">500</a>
-                    </li>
-                </ul>
-            </li>
-            
-            <li class="sidebar-title">Raise Support</li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Documentation</span>
-                </a>
-            </li>
-            
+
             <li
                 class="sidebar-item  ">
                 <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
@@ -212,7 +129,7 @@
                     <span>Contribute</span>
                 </a>
             </li>
-            
+
             <li
                 class="sidebar-item  ">
                 <a href="https://github.com/zuramai/mazer#donate" class='sidebar-link'>
@@ -220,7 +137,7 @@
                     <span>Donate</span>
                 </a>
             </li>
-            
+
         </ul>
     </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -232,9 +149,9 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-            
+
 <div class="page-heading">
-    <h3>Profile Statistics</h3>
+    <h3>이미지 기반 딥러닝 패션 트랜드 분석 및 맞춤 이미지 제공 서비스</h3>
 </div>
 <div class="page-content">
     <section class="row">
@@ -250,7 +167,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
+                                    <h6 class="text-muted font-semibold">날짜</h6>
                                     <h6 class="font-extrabold mb-0">112.000</h6>
                                 </div>
                             </div>
@@ -267,7 +184,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Followers</h6>
+                                    <h6 class="text-muted font-semibold">상하의</h6>
                                     <h6 class="font-extrabold mb-0">183.000</h6>
                                 </div>
                             </div>
@@ -284,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Following</h6>
+                                    <h6 class="text-muted font-semibold">패션 카테고리</h6>
                                     <h6 class="font-extrabold mb-0">80.000</h6>
                                 </div>
                             </div>
@@ -301,7 +218,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Saved Post</h6>
+                                    <h6 class="text-muted font-semibold">오늘 뭐입지?</h6>
                                     <h6 class="font-extrabold mb-0">112</h6>
                                 </div>
                             </div>
@@ -310,126 +227,61 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-xl-6 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Profile Visit</h4>
+                            <h4>오늘의 패션트렌드</h4>
                         </div>
-                        <div class="card-body">
-                            <div id="chart-profile-visit"></div>
+                        <div class="card-content">
+                            <img src="{% static 'index/assets/images/samples/motorcycle.jpg' %}" class="card-img-top img-fluid"
+                                 alt="singleminded">
+                            <div class="card-body">
+                                <h5 class="card-title">Be Single Minded</h5>
+                                <p class="card-text">
+                                    Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.Gummies
+                                    bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.
+                                </p>
+                            </div>
                         </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>작년 이맘 때</h4>
+                        </div>
+                        <div class="card-content">
+                            <img src="{% static 'index/assets/images/samples/motorcycle.jpg' %}" class="card-img-top img-fluid"
+                                 alt="singleminded">
+                            <div class="card-body">
+                                <h5 class="card-title">Be Single Minded</h5>
+                                <p class="card-text">
+                                    Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.Gummies
+                                    bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-xl-4">
+                <div class="col-12 col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Profile Visit</h4>
+                            <h4> 딥러닝 기반 시즌별 패션 키워드 트렌드 </h4>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-primary" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="{% static 'index/assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">Europe</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="mb-0">862</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-europe"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-success" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="{% static 'index/assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">America</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="mb-0">375</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-america"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-danger" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="{% static 'index/assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">Indonesia</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="mb-0">1025</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-indonesia"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Latest Comments</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover table-lg">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Comment</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="col-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="{% static 'index/assets/images/faces/5.jpg' %}">
-                                                    </div>
-                                                    <p class="font-bold ms-3 mb-0">Si Cantik</p>
-                                                </div>
-                                            </td>
-                                            <td class="col-auto">
-                                                <p class=" mb-0">Congratulations on your graduation!</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="col-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="{% static 'index/assets/images/faces/2.jpg' %}">
-                                                    </div>
-                                                    <p class="font-bold ms-3 mb-0">Si Ganteng</p>
-                                                </div>
-                                            </td>
-                                            <td class="col-auto">
-                                                <p class=" mb-0">Wow amazing design! Can you make another tutorial for
-                                                    this design?</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <div id="chart-profile-visit"></div>
                         </div>
                     </div>
                 </div>
@@ -451,7 +303,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Recent Messages</h4>
+                    <h4>HOT 인스타 셀럽</h4>
                 </div>
                 <div class="card-content pb-4">
                     <div class="recent-message d-flex px-4 py-3">
@@ -487,14 +339,117 @@
                     </div>
                 </div>
             </div>
+
             <div class="card">
-                <div class="card-header">
-                    <h4>Visitors Profile</h4>
+                    <div class="card-header">
+                        <h4 class="card-title">인스타 게시물 URL</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <p class="card-text">실시간 게시물 모아보기</p>
+                        </div>
+                        <!-- table with no border -->
+                        <div class="table-responsive">
+                            <table class="table table-borderless mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>LIKES</th>
+                                        <th>LOCATION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-bold-500">jennierubyjane</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">roses_are_rosie</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">lalalalisa_m</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">roses_are_rosie</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td class="text-bold-500">Ashley Boul</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold-500">Sooyaa__</td>
+                                        <td>1.5M</td>
+                                        <td>Seoul</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div id="chart-visitors-profile"></div>
-                </div>
-            </div>
         </div>
     </section>
 </div>
@@ -514,7 +469,7 @@
     </div>
     <script src="{% static 'index/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
     <script src="{% static 'index/assets/js/bootstrap.bundle.min.js' %}"></script>
-    
+
 <script src="{% static 'index/assets/vendors/apexcharts/apexcharts.js' %}"></script>
 <script src="{% static 'index/assets/js/pages/dashboard.js' %}"></script>
 
