@@ -9,16 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'index/assets/css/bootstrap.css' %}">
-
-<link rel="stylesheet" href="{% static 'index/assets/vendors/iconly/bold.css' %}">
+    <link rel="stylesheet" href="{% static 'index/assets/vendors/iconly/bold.css' %}">
 
     <link rel="stylesheet" href="{% static 'index/assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
     <link rel="stylesheet" href="{% static 'index/assets/vendors/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'index/assets/css/app.css' %}">
     <link rel="shortcut icon" href="{% static 'index/assets/images/favicon.svg' %}" type="image/x-icon">
+
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body>
+<tbody>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -341,115 +343,27 @@
             </div>
 
             <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">인스타 게시물 URL</h4>
+                <div class="card-header">
+                    <h4 class="card-title">인스타 게시물 URL</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <p class="card-text">실시간 게시물 모아보기</p>
                     </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            <p class="card-text">실시간 게시물 모아보기</p>
-                        </div>
-                        <!-- table with no border -->
-                        <div class="table-responsive">
-                            <table class="table table-borderless mb-0">
-                                <thead>
-                                    <tr class="table-active">
-                                        <th>NAME</th>
-                                        <th>LIKES</th>
-                                        <th>LOCATION</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-primary">
-                                        <td class="text-bold-500">jennierubyjane</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-
-                                    </tr>
-                                    <tr class="table-success">
-                                        <td class="text-bold-500">roses_are_rosie</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-danger">
-                                        <td class="text-bold-500">lalalalisa_m</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-warning">
-                                        <td class="text-bold-500">roses_are_rosie</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-info">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-success">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-danger">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-warning">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-info">
-                                        <td class="text-bold-500">roses_are_rosie</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-success">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-danger">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-waring">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-info">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-success">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-danger">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-warning">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                    <tr class="table-info">
-                                        <td class="text-bold-500">Sooyaa__</td>
-                                        <td>1.5M</td>
-                                        <td>Seoul</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-responsive table-hover "
+                               id="list_table_json">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>DATE</th>
+                                    <th>URL</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
 </div>
@@ -467,12 +381,39 @@
             </footer>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajax({
+                url: "{% url 'test' %}",
+                dataType: 'json',
+                type: 'get',
+                cache: false,
+                success: function(data){
+                    // console.log(data.id);
+                    var event_data = '';
+                    $.each(data, function(index, value){
+                        console.log(value);
+                        event_data += '<tr>';
+                        event_data += '<td>'+value.id+'</td>';
+                        event_data += '<td>'+value.date+'</td>';
+                        event_data += '<td>'+value.url+'</td>';
+                        event_data += '</tr>';
+                    });
+                    // console.log(event_data);
+                    $("#list_table_json").append(event_data);
+                },
+                error: function(d){
+                    /*console.log("error");*/
+                    alert("404. Please wait until the File is Loaded.");
+                }
+            });
+        });
+    </script>
     <script src="{% static 'index/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
     <script src="{% static 'index/assets/js/bootstrap.bundle.min.js' %}"></script>
-
-<script src="{% static 'index/assets/vendors/apexcharts/apexcharts.js' %}"></script>
-<script src="{% static 'index/assets/js/pages/dashboard.js' %}"></script>
-
+    <script src="{% static 'index/assets/vendors/apexcharts/apexcharts.js' %}"></script>
+    <script src="{% static 'index/assets/js/pages/dashboard.js' %}"></script>
     <script src="{% static 'index/assets/js/mazer.js' %}"></script>
 </body>
 

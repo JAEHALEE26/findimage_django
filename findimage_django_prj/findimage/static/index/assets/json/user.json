@@ -1,0 +1,15 @@
+{
+   "version": "5.2",
+   "user_type": "online",
+   "user":
+   [
+       {
+            "name": "John",
+            "id": 50
+       },
+       {
+            "name": "Mark",
+            "id": 57
+        }
+    ]
+}
