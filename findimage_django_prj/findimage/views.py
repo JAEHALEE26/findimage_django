@@ -12,11 +12,11 @@ from .Save import save_img
 
 save_img()
 
-def index(request):
-    return render(request, "index/index.html")
+def dashboard(request):
+    return render(request, "dashboard/dashboard.html")
 
 def search_result(request):
-    return render(request, "index/search_result.html")
+    return render(request, "dashboard/search_result.html")
 
 @csrf_exempt
 def display_table(request):
@@ -51,7 +51,7 @@ def search(request):
         search_dir = []
         for j in payload:
             search_dir.append(j[2:])
-    return render(request, 'index/searched.html', {'data': search_dir})
+    return render(request, 'dashboard/searched.html', {'data': search_dir})
 
 
 

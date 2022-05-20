@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-{% include 'index/header.html' %}
+{% include 'dashboard/header.html' %}
 <body>
-{% include 'index/sidebar.html' %}
+{% include 'dashboard/sidebar.html' %}
 
 <div class="page-heading">
     <h3>이미지 기반 딥러닝 패션 트랜드 분석 및 맞춤 이미지 제공 서비스</h3>
@@ -111,7 +111,8 @@
                             <h4>작년 이맘 때</h4>
                         </div>
                         <div class="card-content">
-                            <img src="/static/index/assets/images/samples/motorcycle.jpg" class="card-img-top img-fluid"
+                            <img src="/static/dashboard/assets/images/samples/motorcycle.jpg"
+                                 class="card-img-top img-fluid"
                                  alt="singleminded">
                             <div class="card-body">
                                 <h5 class="card-title">Be Single Minded</h5>
@@ -147,51 +148,12 @@
                 <div class="card-body py-4 px-5">
                     <div class="d-flex align-items-center">
                         <div class="avatar avatar-xl">
-                            <img src="{% static 'index/assets/images/faces/1.jpg' %}" alt="Face 1">
+                            <img src="{% static 'dashboard/assets/images/faces/1.jpg' %}" alt="Face 1">
                         </div>
                         <div class="ms-3 name">
                             <h5 class="font-bold">John Duck</h5>
                             <h6 class="text-muted mb-0">@johnducky</h6>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h4>HOT 인스타 셀럽</h4>
-                </div>
-                <div class="card-content pb-4">
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="{% static 'index/assets/images/faces/4.jpg' %}">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Hank Schrader</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="{% static 'index/assets/images/faces/5.jpg' %}">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Dean Winchester</h5>
-                            <h6 class="text-muted mb-0">@imdean</h6>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="{% static 'index/assets/images/faces/1.jpg' %}">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">John Dodol</h5>
-                            <h6 class="text-muted mb-0">@dodoljohn</h6>
-                        </div>
-                    </div>
-                    <div class="px-4">
-                        <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
-                            Conversation
-                        </button>
                     </div>
                 </div>
             </div>
@@ -205,8 +167,7 @@
                         <p class="card-text">실시간 게시물 모아보기</p>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-responsive table-hover "
-                               id="list_table_json">
+                        <table class="table table-responsive table-hover " id="list_table_json">
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -221,7 +182,7 @@
         </div>
     </section>
 </div>
-{% include 'index/footer.html' %}
+{% include 'dashboard/footer.html' %}
 
 
 <script type="text/javascript">
@@ -233,19 +194,25 @@
             cache: false,
             success: function (data) {
                 // console.log(data);
-                var table_data = '';
+                var table_data = document.createElement("tbody");
                 $.each(data, function (index, value) {
                     // console.log(value);
-                    var linker = value.post_url;
-                    table_data += '<tr style = "cursor:pointer;" ' +
-                        'onClick = " location.href=linker" ' +
-                        'onMouseOver = " indow.status = \'http://ihouse.so.vc\' " ' +
-                        'onMouseOut = " window.status = \'\' " >';
+                    var tr = document.createElement("tr");
+                    var insta_col = document.createElement("td")
+                    insta_col.innerText = value.insta_id;
+                    var likes_col = document.createElement("td")
+                    likes_col.innerText = value.likes;
+                    var date_col = document.createElement("td")
+                    date_col.innerText = value.date;
 
-                    table_data += '<td>' + value.insta_id + '</td>';
-                    table_data += '<td>' + value.likes + '</td>';
-                    table_data += '<td>' + value.date + '</td>';
-                    table_data += '</tr>';
+                    tr.appendChild(insta_col);
+                    tr.appendChild(likes_col);
+                    tr.appendChild(date_col);
+
+                    tr.addEventListener("click", function () {
+                        window.open(value.post_url);
+                    });
+                    table_data.appendChild(tr);
                 });
                 // console.log(table_data);
                 $("#list_table_json").append(table_data);
@@ -257,6 +224,18 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            $("#list_table_json").click(function () {
+            window.open(linker);
+        });
+    });
+    });
+
+
+</script>
+
 <script>
     function startLoadFile() {
         $.ajax({
@@ -273,6 +252,7 @@
             }
         });
     }
+
     startLoadFile();
 </script>
 </body>
