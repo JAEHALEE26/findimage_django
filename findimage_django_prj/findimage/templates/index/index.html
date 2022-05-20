@@ -1,156 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'index/assets/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'index/assets/vendors/iconly/bold.css' %}">
-
-    <link rel="stylesheet" href="{% static 'index/assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
-    <link rel="stylesheet" href="{% static 'index/assets/vendors/bootstrap-icons/bootstrap-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'index/assets/css/app.css' %}">
-    <link rel="shortcut icon" href="{% static 'index/assets/images/favicon.svg' %}" type="image/x-icon">
-
-<!--    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</head>
-
-<tbody>
-    <div id="app">
-        <div id="sidebar" class="active">
-            <div class="sidebar-wrapper active">
-    <div class="sidebar-header">
-        <div class="d-flex justify-content-between">
-            <div class="logo">
-                <a href="http://localhost:8000/findimage/index"><img src="{% static 'index/assets/images/logo/logo.png' %}" alt="Logo" srcset=""></a>
-            </div>
-            <div class="toggler">
-                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="sidebar-menu">
-        <ul class="menu">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12 mb-1">
-                        <div class="input-group mb-6">
-                            <input type="text" class="form-control" placeholder="Search..."
-                                aria-label="Search" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button"
-                                id="button-addon2"><i class="bi bi-search"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <li class="sidebar-title">Menu</li>
-
-            <li
-                class="sidebar-item active ">
-                <a href="http://localhost:8000/findimage/index" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-stack"></i>
-                    <span>기능 명세표</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="component-alert.html">딥러닝 기반 이미지 검색</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="component-badge.html">시계열 트렌드 분석</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="component-breadcrumb.html">뉴스레터 서비스</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
-                    <span>사용한 기술목록</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="extra-component-avatar.html">Selenium</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="extra-component-sweetalert.html">Yolo</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="extra-component-toastify.html">Django</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="extra-component-rating.html">Airflow</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="extra-component-rating.html">Slack</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="sidebar-title">우리에 대하여 위하여</li>
-
-            <li
-                class="sidebar-item  has-sub">
-
-            <a href="#" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
-                    <span>Github</span>
-            </a>
-            <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="extra-component-avatar.html">크롤러</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="extra-component-sweetalert.html">딥러닝</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="extra-component-toastify.html">웹 프로덕트</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li
-                class="sidebar-item  ">
-                <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
-                    <i class="bi bi-puzzle"></i>
-                    <span>Contribute</span>
-                </a>
-            </li>
-
-            <li
-                class="sidebar-item  ">
-                <a href="https://github.com/zuramai/mazer#donate" class='sidebar-link'>
-                    <i class="bi bi-cash"></i>
-                    <span>Donate</span>
-                </a>
-            </li>
-
-        </ul>
-    </div>
-    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-</div>
-        </div>
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+{% include 'index/header.html' %}
+<body>
+{% include 'index/sidebar.html' %}
 
 <div class="page-heading">
     <h3>이미지 기반 딥러닝 패션 트랜드 분석 및 맞춤 이미지 제공 서비스</h3>
@@ -235,8 +88,8 @@
                             <h4>오늘의 패션트렌드</h4>
                         </div>
                         <div class="card-content">
-                            <img src="{% static 'index/assets/images/samples/motorcycle.jpg' %}" class="card-img-top img-fluid"
-                                 alt="singleminded">
+                            <!-- 오늘의 이미지 -->
+                            <div id="today_container"></div>
                             <div class="card-body">
                                 <h5 class="card-title">Be Single Minded</h5>
                                 <p class="card-text">
@@ -258,7 +111,7 @@
                             <h4>작년 이맘 때</h4>
                         </div>
                         <div class="card-content">
-                            <img src="{% static 'index/assets/images/samples/motorcycle.jpg' %}" class="card-img-top img-fluid"
+                            <img src="/static/index/assets/images/samples/motorcycle.jpg" class="card-img-top img-fluid"
                                  alt="singleminded">
                             <div class="card-body">
                                 <h5 class="card-title">Be Single Minded</h5>
@@ -337,7 +190,8 @@
                     </div>
                     <div class="px-4">
                         <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
-                            Conversation</button>
+                            Conversation
+                        </button>
                     </div>
                 </div>
             </div>
@@ -354,11 +208,11 @@
                         <table class="table table-responsive table-hover "
                                id="list_table_json">
                             <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>DATE</th>
-                                    <th>URL</th>
-                                </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>LIKE</th>
+                                <th>DATE</th>
+                            </tr>
                             </thead>
                         </table>
                     </div>
@@ -367,54 +221,60 @@
         </div>
     </section>
 </div>
+{% include 'index/footer.html' %}
 
-            <footer>
-                <div class="footer clearfix mb-0 text-muted">
-                    <div class="float-start">
-                        <p>2021 &copy; Mazer</p>
-                    </div>
-                    <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="http://ahmadsaugi.com">A. Saugi</a></p>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $.ajax({
-                url: "{% url 'test' %}",
-                dataType: 'json',
-                type: 'get',
-                cache: false,
-                success: function(data){
-                    // console.log(data.id);
-                    var event_data = '';
-                    $.each(data, function(index, value){
-                        console.log(value);
-                        event_data += '<tr>';
-                        event_data += '<td>'+value.id+'</td>';
-                        event_data += '<td>'+value.date+'</td>';
-                        event_data += '<td>'+value.url+'</td>';
-                        event_data += '</tr>';
-                    });
-                    // console.log(event_data);
-                    $("#list_table_json").append(event_data);
-                },
-                error: function(d){
-                    /*console.log("error");*/
-                    alert("404. Please wait until the File is Loaded.");
-                }
-            });
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "{% url 'display_table' %}",
+            dataType: 'json',
+            type: 'get',
+            cache: false,
+            success: function (data) {
+                // console.log(data);
+                var table_data = '';
+                $.each(data, function (index, value) {
+                    // console.log(value);
+                    var linker = value.post_url;
+                    table_data += '<tr style = "cursor:pointer;" ' +
+                        'onClick = " location.href=linker" ' +
+                        'onMouseOver = " indow.status = \'http://ihouse.so.vc\' " ' +
+                        'onMouseOut = " window.status = \'\' " >';
+
+                    table_data += '<td>' + value.insta_id + '</td>';
+                    table_data += '<td>' + value.likes + '</td>';
+                    table_data += '<td>' + value.date + '</td>';
+                    table_data += '</tr>';
+                });
+                // console.log(table_data);
+                $("#list_table_json").append(table_data);
+            },
+            error: function (d) {
+                // console.log("error");
+                alert("404. Please wait until the File is Loaded.");
+            }
         });
-    </script>
-    <script src="{% static 'index/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
-    <script src="{% static 'index/assets/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'index/assets/vendors/apexcharts/apexcharts.js' %}"></script>
-    <script src="{% static 'index/assets/js/pages/dashboard.js' %}"></script>
-    <script src="{% static 'index/assets/js/mazer.js' %}"></script>
+    });
+</script>
+<script>
+    function startLoadFile() {
+        $.ajax({
+            url: "{% url 'display_today' %}",
+            type: 'GET',
+            dataType: 'text',
+            success: function (data) {
+                console.log(data);
+                var strDOM = "";
+                strDOM += '<img src = "' + data + '" class="card-img-top img-fluid" alt="singleminded" >';
+                // console.log(strDOM)
+                var $imageContainer = $("#today_container");
+                $imageContainer.append(strDOM);
+            }
+        });
+    }
+    startLoadFile();
+</script>
 </body>
 
 </html>

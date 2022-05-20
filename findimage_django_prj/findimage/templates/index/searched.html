@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% include 'index/header.html' %}
+<body>
+{% include 'index/sidebar.html' %}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Card</h3>
+                <p class="text-subtitle text-muted">Bootstrap’s cards provide a flexible and extensible content
+                    container with multiple variants and options.</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Card</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Basic card section start -->
+    <section id="content-types">
+        <div class="row">
+            {% for img in data %}
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <a>{{ img }}</a>
+                <div class="card">
+                    <img style="border: 3px;
+                    border-radius: 7px;
+                    -moz-border-radius: 7px;
+                    -khtml-border-radius: 7px;
+                    -webkit-border-radius: 7px;"
+                         src="{% static img %}" class="img-fluid"
+                         alt="singleminded">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+{% include 'index/footer.html' %}
+
+</script>
+</body>
+
+</html>

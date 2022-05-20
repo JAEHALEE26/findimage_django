@@ -1,0 +1,140 @@
+{% load static %}
+
+<div id="app">
+    <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-between">
+                    <div class="logo">
+                        <a href="http://localhost:8000/findimage/index"><img
+                                src="{% static 'index/assets/images/logo/logo.png' %}" alt="Logo" srcset=""></a>
+                    </div>
+                    <div class="toggler">
+                        <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-1">
+                                <div class="input-group mb-6">
+                                    <!--검색창과 검색버튼-->
+                                    <form class="d-flex" method="GET" action="{% url 'search' %}">
+                                        {% csrf_token %}
+                                        <input class="form-control" type="search"
+                                               placeholder="Search..." name="searched" aria-label="Search"
+                                               aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-secondary" type="submit"
+                                                id="button-addon2" onclick="myFunction()"><i class="bi bi-search"></i>
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <li class="sidebar-title">Menu</li>
+
+                    <li
+                            class="sidebar-item active ">
+                        <a href="http://localhost:8000/findimage/index" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li
+                            class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-stack"></i>
+                            <span>기능 명세표</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="component-alert.html">딥러닝 기반 이미지 검색</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="component-badge.html">시계열 트렌드 분석</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="component-breadcrumb.html">뉴스레터 서비스</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li
+                            class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-collection-fill"></i>
+                            <span>사용한 기술목록</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="extra-component-avatar.html">Selenium</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="extra-component-sweetalert.html">Yolo</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="extra-component-toastify.html">Django</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="extra-component-rating.html">Airflow</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="extra-component-rating.html">Slack</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-title">우리에 대하여 위하여</li>
+
+                    <li
+                            class="sidebar-item  has-sub">
+
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-collection-fill"></i>
+                            <span>Github</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="extra-component-avatar.html">크롤러</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="extra-component-sweetalert.html">딥러닝</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="extra-component-toastify.html">웹 프로덕트</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li
+                            class="sidebar-item  ">
+                        <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
+                            <i class="bi bi-puzzle"></i>
+                            <span>Contribute</span>
+                        </a>
+                    </li>
+
+                    <li
+                            class="sidebar-item  ">
+                        <a href="https://github.com/zuramai/mazer#donate" class='sidebar-link'>
+                            <i class="bi bi-cash"></i>
+                            <span>Donate</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
