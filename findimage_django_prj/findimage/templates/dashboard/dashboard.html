@@ -2,9 +2,16 @@
 <html lang="en">
 {% load static %}
 {% include 'dashboard/header.html' %}
-<body>
 {% include 'dashboard/sidebar.html' %}
-
+<style>
+    #chart {
+      width: 1100px;
+      height: 500px;
+      margin: 0 auto;
+    }
+</style>
+<body>
+<body>
 <div class="page-heading">
     <h3>이미지 기반 딥러닝 패션 트랜드 분석 및 맞춤 이미지 제공 서비스</h3>
 </div>
@@ -90,18 +97,8 @@
                         <div class="card-content">
                             <!-- 오늘의 이미지 -->
                             <div id="today_container"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Be Single Minded</h5>
-                                <p class="card-text">
-                                    Chocolate sesame snaps apple pie danish cupcake sweet roll jujubes tiramisu.Gummies
-                                    bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll.
-                                </p>
-                            </div>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                        <ul class="list-group list-group-flush" id="today_list">
                         </ul>
                     </div>
                 </div>
@@ -123,7 +120,7 @@
                             </div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item" >Cras justo odio</li>
                             <li class="list-group-item">Dapibus ac facilisis in</li>
                             <li class="list-group-item">Vestibulum at eros</li>
                         </ul>
@@ -137,7 +134,7 @@
                             <h4> 딥러닝 기반 시즌별 패션 키워드 트렌드 </h4>
                         </div>
                         <div class="card-body">
-                            <div id="chart-profile-visit"></div>
+                            <div id="chart"></div>
                         </div>
                     </div>
                 </div>
@@ -196,7 +193,7 @@
                 // console.log(data);
                 var table_data = document.createElement("tbody");
                 $.each(data, function (index, value) {
-                    // console.log(value);
+                    // console.log(value.insta_id);
                     var tr = document.createElement("tr");
                     var insta_col = document.createElement("td")
                     insta_col.innerText = value.insta_id;
@@ -224,26 +221,15 @@
         });
     });
 </script>
-<script>
-    $(document).ready(function () {
-        $.ajax({
-            $("#list_table_json").click(function () {
-            window.open(linker);
-        });
-    });
-    });
-
-
-</script>
 
 <script>
     function startLoadFile() {
         $.ajax({
-            url: "{% url 'display_today' %}",
+            url: "{% url 'display_today_text' %}",
             type: 'GET',
             dataType: 'text',
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 var strDOM = "";
                 strDOM += '<img src = "' + data + '" class="card-img-top img-fluid" alt="singleminded" >';
                 // console.log(strDOM)
@@ -255,6 +241,45 @@
 
     startLoadFile();
 </script>
+
+<script>
+    function startLoadFile() {
+        $.ajax({
+            url: "{% url 'display_today_text' %}",
+            dataType: 'text',
+            type: 'GET',
+            cache: false,
+            success: function (data) {
+                var parseData = JSON.parse(data);
+                // console.log(parseData);
+                // console.log(parseData.insta_id);
+                var strDOM = "";
+
+                $("#today_list").append('<li class="list-group-item">' + parseData.insta_id + '</li>');
+                $("#today_list").append('<li class="list-group-item">' + parseData.likes + '</li>');
+                $("#today_list").append('<li class="list-group-item">' + parseData.date + '</li>');
+
+                $("#today_list").on("click", function () {
+                    window.open(parseData.post_url);
+                });
+            }
+        });
+    }
+
+    startLoadFile();
+</script>
+
+<script>
+    const sdk = new ChartsEmbedSDK({
+        baseUrl: "https://charts.mongodb.com/charts-project-0-fbate", // ~REPLACE~ with the Base URL from your Embed Chart dialog.
+    });
+    const chart = sdk.createChart({
+        chartId: "628b7643-100c-4eae-8699-8ff55bc153eb", // ~REPLACE~ with the Chart ID from your Embed Chart dialog.
+        // Additional options go here
+    });
+    chart.render(document.getElementById("chart"));
+</script>
+
 </body>
 
 </html>

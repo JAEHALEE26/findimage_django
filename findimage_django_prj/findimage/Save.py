@@ -1,8 +1,9 @@
 import shutil
 from datetime import date
-from .Connect import collection_Instagram
-import requests, os
+import requests
 from pathlib import Path
+from .Connect import collection_Instagram
+
 
 def save_img():
     imgList = collection_Instagram.distinct("img_url")
@@ -30,3 +31,5 @@ def save_img():
     except Exception as e:
         print("Problem while saving photos inside image list..")
         print(e)
+
+save_img()
